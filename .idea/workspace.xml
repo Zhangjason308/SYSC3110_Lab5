@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="SYSC3110_Lab5:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="edee4567-9521-4fd2-88a7-aa93029b1161" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SYSC3110_Lab5.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AddressBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AddressBookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AddressBookFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AddressBookView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BuddyInfo.java" afterDir="false" />
+    <list default="true" id="edee4567-9521-4fd2-88a7-aa93029b1161" name="Changes" comment="Lab 5 - without the update">
+      <change afterPath="$PROJECT_DIR$/src/AddressBookTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYSC3110_Lab5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SYSC3110_Lab5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddressBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddressBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddressBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddressBookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddressBookFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddressBookFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddressBookView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddressBookView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BuddyInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BuddyInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +27,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -39,12 +43,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AddressBookFrame" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AddressBookFrame" />
+      <module name="SYSC3110_Lab5" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,6 +85,14 @@
       <option name="presentableId" value="Default" />
       <updated>1666932359647</updated>
     </task>
+    <task id="LOCAL-00001" summary="Lab 5 - without the update">
+      <created>1667205436591</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667205436591</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -66,5 +105,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Lab 5 - without the update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lab 5 - without the update" />
   </component>
 </project>

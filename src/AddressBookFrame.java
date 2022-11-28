@@ -1,7 +1,9 @@
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import java.util.List;
 
 public class AddressBookFrame extends JFrame  {
 
@@ -13,29 +15,55 @@ public class AddressBookFrame extends JFrame  {
     private JMenuItem newBook;
     private JMenuItem addBuddy;
     private JMenuItem removeBuddy;
+
+    private JMenuItem export;
+
+    private JMenuItem imported;
+
     public AddressBookFrame() {
         super("Address Book");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(500,300);
+        this.setSize(500, 300);
         AddressBook model = new AddressBook();
-        AddressBookView view = new AddressBookView();
-        AddressBookController controller = new AddressBookController(model);
+        AddressBookView view = new AddressBookView(model);
+        //AddressBookController controller = new AddressBookController(model);
         menuBar = new JMenuBar();
         addressMenu = new JMenu("Address");
         buddyMenu = new JMenu("Buddy");
         newBook = new JMenuItem("New Book");
         addBuddy = new JMenuItem("Add Buddy");
         removeBuddy = new JMenuItem("Remove Buddy");
-        showBook = new JMenuItem("Show Book");
+        export = new JMenuItem("Export");
+        imported = new JMenuItem("Import");
         menuBar.add(addressMenu);
         menuBar.add(buddyMenu);
         addressMenu.add(newBook);
         buddyMenu.add(addBuddy);
         addressMenu.add(removeBuddy);
-        addressMenu.add(showBook);
+        addressMenu.add(export);
+        addressMenu.add(imported);
         this.setVisible(true);
         this.setJMenuBar(menuBar);
         this.add(view.pane);
+
+        imported.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String filename = JOptionPane.showInputDialog("Enter file name: ");
+                AddressBook newBook = model.importAddressBook(filename);
+                for (BuddyInfo bd: newBook.getBuddyList()) {
+                    view.model.addElement(bd);
+                }
+
+            }
+        });
+        export.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String filename = JOptionPane.showInputDialog("Enter file name: ");
+                model.save(filename);
+            }
+        });
 
         addBuddy.addActionListener(new ActionListener() {
             @Override
@@ -43,36 +71,44 @@ public class AddressBookFrame extends JFrame  {
                 String input_name = JOptionPane.showInputDialog("Enter name: ");
                 String input_address = JOptionPane.showInputDialog("Enter address: ");
                 String input_number = JOptionPane.showInputDialog("Enter phone number: ");
-                model.addBuddy(new BuddyInfo(input_name, input_address,input_number));
+                view.model.addElement(new BuddyInfo(input_name, input_address, input_number)); //change model private
+
             }
         });
 
         newBook.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               model.getBuddyList().clear();
+                view.model.clear();
             }
         });
 
         removeBuddy.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String input_name = JOptionPane.showInputDialog("Enter buddy number (0-n): ");
-                System.out.println(model.removeBuddy(Integer.parseInt(input_name)));
+                view.getModel().removeElement(view.getBuddyList().getSelectedValue());
             }
-        });
 
-        showBook.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println(model);
+                /*
+                view.getBuddyList().addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        super.mouseClicked(e);
+                        java.util.List selectedItems = view.getBuddyList().getSelectedValuesList();
+                        if (SwingUtilities.isLeftMouseButton(e)) {
+                            for (Object o : selectedItems) {
+                                view.getModel().removeElement(o);
+                                break;
+                            }
+                        }
+                    }
+                });
             }
-        });
 
+             */
+        });
 
     }
-
-
     public static void main(String[] args) {
         new AddressBookFrame();
     }

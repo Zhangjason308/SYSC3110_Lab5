@@ -1,3 +1,5 @@
+import java.util.StringTokenizer;
+
 public class BuddyInfo {
     public String name;
     private String address;
@@ -7,6 +9,10 @@ public class BuddyInfo {
         name = "N/A";
         address = "N/A";
         phoneNumber = "N/A";
+    }
+
+    public BuddyInfo(String name) {
+        this.name = name;
     }
     public BuddyInfo(String name, String address, String phoneNumber) {
         this.name = name;
@@ -31,7 +37,12 @@ public class BuddyInfo {
     }
 
     public String toString() {
-        return "Name: " + this.getName() + "    " + "Address: " + this.getAddress() + "    " +  "Phone: " + this.getPhoneNumber();
+        return this.getName() +"#" +this.getAddress() + "#"+ this.getPhoneNumber()+"\n";
+    }
+
+    public static BuddyInfo importBuddyInfo(String buddyName) { // String should be Name#Address#Number
+        String[] parse = buddyName.split("#");
+        return new BuddyInfo(parse[0],parse[1],parse[2]);
     }
 
 
